@@ -1,0 +1,17 @@
+<div class="login_form-wrapper">
+    <div class="container">
+        <h2>ログインページ</h2>
+        <div class="error">
+            <% if @error_message %>
+            <div class="form-error">
+                <%= @error_message %>
+            </div>
+            <% end %>
+        </div>
+        <%=form_tag("/login") do %>
+        <p>メールアドレス：<input type="text" name="email" value="<%=@email%>"></p>
+        <p>パスワード：<input type="password" name="password" value="<%=@password%>"></p>
+        <input type="submit" value="ログインする">
+        <% end %>
+    </div>
+</div>

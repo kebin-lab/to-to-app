@@ -1,17 +1,20 @@
-<h1>投稿一覧</h1>
-<p>ここでは、投稿を一覧で表示します</p>
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>content</th>
-        <th>投稿日</th>
-    </tr>
-    <% @posts.each do |post| %>
+<div class="container">
+    <h1>投稿一覧</h1>
+    <p>ここでは、投稿を一覧で表示します</p>
+    <table border="1">
         <tr>
-            <td><%=post.id %></td>
-            <td><%=link_to("#{post.content}","/posts/#{post.id}")%></td>
-            <td><%=post.created_at%></td>
+            <th>ID</th>
+            <th>content</th>
+            <th>投稿日</th>
         </tr>
-     <% end %>
-</table>
+        <% @posts.each do |post| %>
+            <tr>
+                <td><%=post.id %></td>
+                <td><%=link_to("#{post.content}","/posts/#{post.id}")%></td>
+                <td><%=post.created_at%></td>
+            </tr>
+        <% end %>
+    </table>
+    <%=link_to("新規投稿をする","/posts/new")%>
+</div>
 

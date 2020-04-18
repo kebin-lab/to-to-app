@@ -10,6 +10,35 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-left">
+      <%=link_to("「タス君」","#")%>
+      </div>
+      <div class="header-right">
+        
+        <ul>
+        <% if session[:user_id]%>
+        <% current_user = User.find_by(id: "#{session[:user_id]}")%>
+          <li><%=link_to("ユーザ名：#{current_user.name}","/users/#{current_user.id}")%></li>
+          <li><%=link_to("新規投稿","/posts/new")%></li>
+          <li><%=link_to("投稿一覧","/posts/index")%></li>
+          <li><%=link_to("ユーザ一覧","/users/index")%></li>
+          <li><%=link_to("ログアウト","/logout")%></li>
+        <% else %>
+          <li><%=link_to("ユーザ登録","/users/new")%></li>
+          <li><%=link_to("ログイン","/login")%></li>
+          <li><%=link_to("home","/")%></li>
+          <li><%=link_to("about","/home/about")%></li>
+          <li></li>
+        <% end %>
+        </ul>
+      </div>
+    </header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <p><%= flash[:notice] %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,81 @@
+// 共通部分
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+  
+input {
+    background-color: transparent;
+    outline-width: 0;
+}
+  
+form input[type="submit"] {
+    border: none;
+    cursor: pointer;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.7;
+}
+
+li {
+    list-style: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    height: 64px;
+    background: skyblue;/*背景を水色に*/
+}
+
+.header-left {
+    padding: 10px;
+    float: left;
+    font-size: 32px;
+}
+
+.header-right {
+    float:right;
+}
+
+// .header-right li {
+//     float: left;
+//     padding: 10px;
+//     font-size: 15px;
+// }
+body {
+    background-color: #dddddd;
+}
+
+.header-right ul li { 
+    display: inline-block;/*inline-blockにします*/
+    padding: 10px;/*余白も指定できる*/
+    vertical-align: middle;/*縦の表示位置も指定できる*/
+    text-align: center;
+    color: white;
+  }
+
+  .header-right a {
+      color: white;
+      font-size: 15px;
+  }
+
+  .flash {
+      background-color: yellow;
+      padding: 10px 0;
+  }
+
+  

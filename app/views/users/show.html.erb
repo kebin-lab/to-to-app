@@ -1,0 +1,20 @@
+<div class="show-wrapper">
+    <div class="container">
+        <h1>ユーザの詳細</h1>
+        <p>ユーザの詳細を表示するページです</p>
+        <div>
+        <table border="1">
+            <tr>
+                <td>ユーザ名:</td><td><%=@user.name%></td>
+            </tr>
+            <tr>
+                <td>メールアドレス:</td><td><%=@user.email%></td>
+            </tr>
+            <tr>
+                <td>パスワード:</td><td><%=@user.password%></td>
+            </tr>
+        </table>
+        <%=link_to("編集する","/users/#{@user.id}/edit")%>
+        </div>
+    </div>
+</div>

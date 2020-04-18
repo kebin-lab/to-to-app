@@ -1,3 +1,19 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    background-color: white;
+    padding: 10px;
+}
+
+.post-content {
+    border: 2px solid paleturquoise;
+    padding: 10px 0;
+}
+
+.btn a{
+    display: inline-block;
+    padding: 10px;
+    background-color: paleturquoise;
+}

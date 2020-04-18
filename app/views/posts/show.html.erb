@@ -1,6 +1,13 @@
-<h1>投稿の詳細</h1>
-<p>投稿の詳細を表示するページです</p>
-<div>
-<h2><%=@post.content%></h2>
-
+<div class="show-wrapper">
+    <div class="container">
+        <h1>投稿の詳細</h1>
+        <p>投稿の詳細を表示するページです</p>
+        <p class="post-content">
+            <%=@post.content%>
+        </p>
+        <div class="btn posts">
+            <%=link_to("編集する","/posts/#{@post.id}/edit")%>
+            <%=link_to("削除する","/posts/#{@post.id}/destroy",method: :post)%>
+        </div>
+    </div>
 </div>

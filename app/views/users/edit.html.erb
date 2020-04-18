@@ -1,0 +1,14 @@
+<div class="edit-wrapper">
+    <div class="container">
+        <h1>ユーザ情報の編集</h1>
+        <p>ユーザ情報を編集するページです</p>
+        <%=form_tag("/users/#{@user.id}/update") do %>
+        <div>
+            <input type="text" name="name" value="<%=@user.name%>">
+            <input type="text" name="email" value="<%=@user.email%>">
+            <input type="text" name="password" value="<%=@user.password%>">
+            <input type="submit" value="保存する">
+        </div>
+        <% end %>
+    </div>
+</div>
