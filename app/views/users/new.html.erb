@@ -14,6 +14,8 @@
             <p>名前：<input type="text" name="name" value="<%=@name%>"></p>
             <p>メールアドレス：<input type="text" name="email" value="<%=@email%>"></p>
             <p>パスワード：<input type="password" name="password" value="<%=@password%>"></p>
+            <p>権限：<input type="checkbox" name="authority" value=1>PM
+            or<input type="checkbox" name="authority" value=2 checked="checked">作業者</p>
             <input type="submit" value="新規登録する">
         </div>
         <% end %>

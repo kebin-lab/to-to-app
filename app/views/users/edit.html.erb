@@ -1,13 +1,14 @@
-<div class="edit-wrapper">
+<div class="mx-auto" style="width: 400px;">
     <div class="container">
         <h1>ユーザ情報の編集</h1>
         <p>ユーザ情報を編集するページです</p>
-        <%=form_tag("/users/#{@user.id}/update") do %>
+        <%=form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
         <div>
-            <input type="text" name="name" value="<%=@user.name%>">
-            <input type="text" name="email" value="<%=@user.email%>">
-            <input type="text" name="password" value="<%=@user.password%>">
-            <input type="submit" value="保存する">
+            <p>名前：<input type="text" name="name" value="<%=@user.name%>"></p>
+            <p>メールアドレス：<input type="text" name="email" value="<%=@user.email%>"></p>
+            <p>パスワード：<input type="password" name="password" value="<%=@user.password%>"></p>
+            <p><input type="file" name="image"></p>
+            <p><input type="submit" value="保存する"></p>
         </div>
         <% end %>
     </div>

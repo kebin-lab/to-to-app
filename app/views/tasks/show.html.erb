@@ -1,0 +1,19 @@
+<div class="mx-auto" style="width: 500px;">
+    <div class="container">
+        <h1 class="mt-3">タスク詳細</h1>
+        <p>タスクの詳細を表示するページです</p>
+        <div class="card mb-2">
+            <div class="card-header"><p>タスクサマリ</p><h5><%=@task.task_summary%></h5></div>
+            <div class="card-body">
+                <p class="border-bottom">優先順位：<%=@task.priority%></p>
+                <p class="border-bottom">期限日：<%=@task.deadline%></p>
+                <p class="border-bottom">累計作業時間：<%=@task.work_time%></p>
+                <div class="border" style="height:100px;">
+                    <p class=""><%=@task.task_detail%></p>
+                </div>
+            </div>
+        </div>
+            <button><%=link_to("編集する","/tasks/#{@task.id}/edit")%></button>
+            <button><%=link_to("削除する","/tasks/#{@task.id}/destroy",method: :post)%></button>
+    </div>
+</div>

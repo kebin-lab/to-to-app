@@ -1,20 +1,23 @@
-<div class="container">
+<div class="mx-auto" style="width: 1170px;">
     <h1>投稿一覧</h1>
     <p>ここでは、投稿を一覧で表示します</p>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>content</th>
-            <th>投稿日</th>
-        </tr>
-        <% @posts.each do |post| %>
-            <tr>
-                <td><%=post.id %></td>
-                <td><%=link_to("#{post.content}","/posts/#{post.id}")%></td>
-                <td><%=post.created_at%></td>
-            </tr>
-        <% end %>
-    </table>
-    <%=link_to("新規投稿をする","/posts/new")%>
+    <button type="button" class="btn btn-secondary mb-2"><%=link_to("新規投稿をする","/posts/new", {class: "text-white"})%></button>
+    <% @posts.each do |post| %>
+     <div class="card mb-3" style="max-width: 1170px;">
+        <div class="row no-gutters">
+            <div class="col-md-1">
+             <img class="card-img" src="<%="/images/#{post.user.image}"%>">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%=post.user.name%></h5>
+                <p class="card-text"><%=link_to("#{post.content}","/posts/#{post.id}", {class: "text-dark"})%></p>
+                <p class="card-text"><small class="text-muted"><%=post.created_at%></small></p>
+            </div>
+            </div>
+        </div>
+    </div>
+  <% end %>
+    
 </div>
 

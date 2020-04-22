@@ -1,0 +1,18 @@
+<div class="mx-auto" style="width: 500px;">
+    <h1>タスクの編集</h1>
+    <p>タスクを編集するページです</p>
+
+    <%=form_tag("/tasks/#{@task.id}/update") do %>
+    <div class="card">
+        <div class="card-header">
+            <h5>タスクサマリ</h5><input name="summary" type="text" value="<%=@task.task_summary%>">
+        </div>
+        <div class="card-body">
+            <p class="card-title border-bottom">優先度：<input name="priority" type="number" value="<%=@task.priority%>"></p>
+            <p class="card-title border-bottom">期限日：<input name="deadline" type="date" value="<%=@task.deadline%>"></p>
+            タスク内容<textarea name="detail" rows="5" cols="30"><%=@task.task_detail%></textarea>
+            <input type="submit" value="保存する">
+        </div>
+    </div>
+    <% end %>
+</div>

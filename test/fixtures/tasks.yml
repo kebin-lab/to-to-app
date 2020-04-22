@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  priority: 1
+  task_summary: MyString
+  task_detail: MyText
+  deadline: 2020-04-19
+  authority: 1
+  work_time: 2020-04-19 11:24:57
+
+two:
+  user_id: 1
+  priority: 1
+  task_summary: MyString
+  task_detail: MyText
+  deadline: 2020-04-19
+  authority: 1
+  work_time: 2020-04-19 11:24:57

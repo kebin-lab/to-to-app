@@ -46,7 +46,9 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      password: params[:password]
+      password: params[:password],
+      image: "default.png",
+      authority: params[:authority]
     )
     @name = params[:name]
     @email = params[:email]
@@ -66,9 +68,16 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.password = params[:password]
+
+    if params[:image]
+      @user.image = "#{@user.id}.png"
+      image = params[:image]
+      File.binwrite("public/images/#{@user.image}",image.read)
+    end
+
     if @user.save
       flash[:notice] = "ユーザ情報を変更しました"
-      redirect_to("/users/index")
+      redirect_to("/users/#{@user.id}")
     else
       render("show")
     end

@@ -12,30 +12,30 @@
   <body>
     <header>
       <div class="header-left">
-      <%=link_to("「タス君」","#")%>
+      
       </div>
-      <div class="header-right">
-        
-        <ul>
+      <nav class="navbar navbar-light bg-light">
+        <%=link_to("「タス君」","#", {class: "navbar-brand"})%>
+        <ul class="nav justify-content-end">
         <% if session[:user_id]%>
         <% current_user = User.find_by(id: "#{session[:user_id]}")%>
-          <li><%=link_to("ユーザ名：#{current_user.name}","/users/#{current_user.id}")%></li>
-          <li><%=link_to("新規投稿","/posts/new")%></li>
-          <li><%=link_to("投稿一覧","/posts/index")%></li>
-          <li><%=link_to("ユーザ一覧","/users/index")%></li>
-          <li><%=link_to("ログアウト","/logout")%></li>
+          <li class="nav-item"><%=link_to("ユーザ名：#{current_user.name}","/users/#{current_user.id}", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("タスク一覧","/tasks/index", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("新規投稿","/posts/new", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("投稿一覧","/posts/index", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("ユーザ一覧","/users/index", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("ログアウト","/logout", {class: "nav-link"})%></li>
         <% else %>
-          <li><%=link_to("ユーザ登録","/users/new")%></li>
-          <li><%=link_to("ログイン","/login")%></li>
-          <li><%=link_to("home","/")%></li>
-          <li><%=link_to("about","/home/about")%></li>
-          <li></li>
+          <li class="nav-item"><%=link_to("ユーザ登録","/users/new", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("ログイン","/login", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("home","/", {class: "nav-link"})%></li>
+          <li class="nav-item"><%=link_to("about","/home/about", {class: "nav-link"})%></li>
         <% end %>
         </ul>
-      </div>
+      </nav>
     </header>
     <% if flash[:notice] %>
-      <div class="flash">
+      <div class="p-3 mb-2 bg-success text-white">
         <p><%= flash[:notice] %></p>
       </div>
     <% end %>

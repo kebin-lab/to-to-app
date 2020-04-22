@@ -1,0 +1,20 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.task-content {
+    display: flex;
+    margin: 10px 0;
+}
+
+.task-content-wrapper {
+    border: 1px solid black;
+}
+
+.task-user-image {
+    height: 80px;
+    width: 80px;
+}
+
+.task-show-right {
+    border: 1px solid black;
+}

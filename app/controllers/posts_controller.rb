@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
+  before_action :current_user
+
+  def current_user
+    @current_user = User.find_by(id: session[:user_id])
+  end
+  
   def index
-    @posts = Post.all.order(create_at: :asc)
+    @posts = Post.all.order(created_at: "desc")
   end
 
   def show
@@ -12,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(content: params[:content],user_id: @current_user.id)
     if @post.save
       flash[:notice] = "投稿が完了しました"
       redirect_to("/posts/index")

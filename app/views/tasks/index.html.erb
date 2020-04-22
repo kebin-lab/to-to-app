@@ -1,0 +1,19 @@
+<div class="mx-auto" style="width: 500px;">
+    <h1>タスク一覧</h1>
+    <p>あなたのタスクを一覧で表示します</p>
+    <button class="mb-2"><%=link_to("タスクを追加する","/tasks/new")%></button>
+        <% @tasks.each do |task| %>
+            <div class="card border mb-2">
+                <div class="card-header">
+                    <p>優先順位：<%=task.priority%></p>
+                    <h5><%=task.task_summary%></h5>
+                </div>
+                <div class="card-body">
+                    <p>期限日：<%=task.deadline%></p>
+                    <p>作業時間：<%=task.work_time%></p>
+                    <button><%=link_to("編集する","/tasks/#{task.id}/edit")%></button>
+                    <button><%=link_to("削除する","/tasks/#{task.id}/destory")%></button>
+                </div>
+            </div>
+        <% end %>
+</div>

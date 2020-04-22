@@ -1,0 +1,15 @@
+<div class="task-new-wrapper">
+    <div class="container">
+        <h1>タスク追加</h1>
+        <p>タスクを新しく追加するページです</p>
+        <%=form_tag("/tasks/create") do %>
+        <div>
+            <p>優先度：<input type="number" name="priority" min="1"></p>
+            <p>タスクサマリ：<input type="text" name="summary"></p>
+            <p>タスク詳細：</p><textarea name="detail" cols="50" rows="10"></textarea>
+            <p>期限：<input type="date" name="deadline"></p>
+            <input type="submit" value="タスクを追加する">
+        </div>
+        <% end %>
+    </div>
+</div>
